@@ -1,7 +1,7 @@
 #! usr/bin/python
 
 import os
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = '/uploads'
@@ -33,7 +33,9 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('uploaded_file', filename=filename))
 
-    return '''
+    return render_template('index.html')
+
+    '''
     <!doctype html>
     <title>DigiScribe - Upload a Video for Conversion</title>
     <h1>Upload a video</h1>
