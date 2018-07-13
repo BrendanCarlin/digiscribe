@@ -35,16 +35,7 @@ def upload_file():
 
     return render_template('index.html')
 
-    '''
-    <!doctype html>
-    <title>DigiScribe - Upload a Video for Conversion</title>
-    <h1>Upload a video</h1>
-    <form method=post enctype=multipart/form-data>
-        <p><input type=file name=file>
-        <input type=submit value=Upload>
-    </form>
-    '''
             
 if __name__ == '__main__':
     app.debug = True
-    app.run(host = '127.0.0.1', port = 5000)
+    app.run(host = '0.0.0.0')
